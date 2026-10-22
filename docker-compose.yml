@@ -1,0 +1,14 @@
+services:
+  db:                                  # il nome del servizio
+    image: postgres:16                 # l'immagine da usare
+    environment:                       # variabili lette da PostgreSQL al primo avvio
+      POSTGRES_DB: minibank            # crea un database "minibank"
+      POSTGRES_USER: minibank          # crea un utente "minibank"
+      POSTGRES_PASSWORD: minibank      # solo in locale!
+    ports:
+      - "5433:5432"                    # porta del Mac : porta del container
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # dove PostgreSQL salva i dati
+
+volumes:
+  pgdata:                              # un "disco" gestito da Docker

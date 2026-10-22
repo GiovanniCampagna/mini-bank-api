@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mini-bank-api
+  datasource:
+    url: jdbc:postgresql://localhost:5433/minibank
+    username: minibank
+    password: minibank
+  jpa:
+    hibernate:
+      ddl-auto: validate   # lo schema lo crea Flyway, Hibernate controlla soltanto
+    open-in-view: false    # niente query lazy nei controller
+  flyway:
+    enabled: true
